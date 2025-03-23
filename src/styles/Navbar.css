@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* 🔹 Genel Navbar Stili */
+nav {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: "Mulish", sans-serif !important;
+  z-index: 1000;
+  height: 80px;
+}
+
+/* 🔹 Ana sayfada navbar'ın shadow ve arkaplanını kaldır */
+.home-navbar {
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Ana sayfadaki navbar'da logo gösterme */
+.home-navbar .logo {
+  display: none;
+}
+
+/* 🔹 Logo */
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav .logo img:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* 🔹 Menü Stili */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+/* Menü Linkleri */
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fcb215;
+  background-color: rgba(0, 122, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* 🔹 Sağ Taraf - İkonlar */
+.nav-icons {
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: 45px;
+}
+
+/* Menü İkonları */
+.nav-icon {
+  position: relative;
+  font-size: 1.5rem;
+  color: #000000;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon:hover {
+  color: #fcb215;
+}
+
+/* Hover'da Açıklama Göster */
+.nav-icon::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-icon:hover::after {
+  opacity: 1;
+}
+
+/* 🔹 Dropdown Menü */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Açılma Animasyonu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  width: 200px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+/* Dropdown Açıldığında Görünür Yap */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dropdown İçindeki Elemanlar */
+.dropdown-menu li {
+  padding: 0px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* ✅ Çift hover sorununu çözmek için sadece <a> etiketi hover alacak */
+.dropdown-menu li a {
+  font-family: "Mulish", sans-serif !important;
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* ✅ SADECE <a> etiketi hover alacak */
+.dropdown-menu li a:hover {
+  background-color: #fcb215;
+  color: white;
+  transform: scale(1.05);
+}
+
+.nav-icon img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-icon:hover img {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* 🔹 Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    display: none !important;
+  }
+}
+
+/* 🔹 Mobil Menü */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .mobile-menu button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mobile-menu.open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+
+  .mobile-menu.open ul li {
+    padding: 10px 20px;
+  }
+}
+
+/* ✅ Mobilde ikon boyutunu ve boşlukları küçült */
+@media (max-width: 768px) {
+  .nav-icons {
+    gap: 10px;
+    margin-right: 20px;
+  }
+
+  .nav-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-icon::after {
+    font-size: 0.65rem;
+    bottom: -24px;
+  }
+}
+
+/* ✅ Tablet boyutları için logo küçültme */
+@media (max-width: 1024px) {
+  nav .logo img {
+    height: 80px;
+  }
+  nav {
+    height: 70px;
+  }
+}
+
+/* ✅ Mobil boyutları için logo daha da küçült */
+@media (max-width: 768px) {
+  nav .logo img {
+    height: 70px;
+  }
+  nav {
+    height: 60px;
+    padding: 8px 16px;
+  }
+}
+
+/* ✅ Çok küçük ekranlar için en küçük hali */
+@media (max-width: 480px) {
+  nav .logo img {
+    height: 60px;
+  }
+  nav {
+    height: 55px;
+    padding: 6px 12px;
+  }
+}
