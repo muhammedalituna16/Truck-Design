@@ -54,7 +54,7 @@ function Contact() {
             <h2>Bize Ulaşın</h2>
             <a href="tel:+905400011653" className="contact-info">
               <PhoneIcon className="contact-icon" />
-              <p className="contact-text">+90 540 001 16 53</p>
+              <p className="contact-text">+90 224 712 3133</p>
             </a>
             <a href="mailto:info@osmbranda.com" className="contact-info">
               <EnvelopeIcon className="contact-icon" />
