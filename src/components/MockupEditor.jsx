@@ -505,10 +505,10 @@ const MockupEditor = () => {
           </p>
 
           <div className="contact-buttons">
-            <button onClick={() => window.open("tel:+905400011653")}>
+            <button onClick={() => window.open("tel:+902247123133")}>
               📞 Bizi Ara
             </button>
-            <button onClick={() => window.open("https://wa.me/9055400011653")}>
+            <button onClick={() => window.open("https://wa.me/+9055400011653")}>
               💬 WhatsApp'tan Yaz
             </button>
             <button onClick={() => setShowContactForm(true)}>
