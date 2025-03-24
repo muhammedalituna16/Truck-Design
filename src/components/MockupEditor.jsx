@@ -508,7 +508,7 @@ const MockupEditor = () => {
             <button onClick={() => window.open("tel:+902247123133")}>
               📞 Bizi Ara
             </button>
-            <button onClick={() => window.open("https://wa.me/+9055400011653")}>
+            <button onClick={() => window.open("https://wa.me/+905050005353")}>
               💬 WhatsApp'tan Yaz
             </button>
             <button onClick={() => setShowContactForm(true)}>
