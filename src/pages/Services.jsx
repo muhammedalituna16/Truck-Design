@@ -26,8 +26,8 @@ function Services() {
         </button>
 
         {/* osmajans */}
-        <button className="service-button lexend-font" onClick={() => navigate("/osmajans")}>
-          osmajans.
+        <button className="service-button lexend-font" onClick={() => navigate("/osmreklam")}>
+          osmreklam.
         </button>
       </div>
     </div>

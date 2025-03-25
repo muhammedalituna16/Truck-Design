@@ -7,7 +7,7 @@ import Services from "./pages/Services";
 import OsmBranda from "./pages/OsmBranda";
 import OsmGarden from "./pages/OsmGarden";
 import OsmTente from "./pages/OsmTente";
-import OsmAjans from "./pages/OsmAjans";
+import OsmReklam from "./pages/OsmReklam";
 import Navbar from "./components/Navbar";
 import MockupEditor from "./components/MockupEditor";
 
@@ -37,7 +37,7 @@ function MainLayout() {
         <Route path="/osmbranda" element={<OsmBranda />} />
         <Route path="/osmgarden" element={<OsmGarden />} />
         <Route path="/osmtente" element={<OsmTente />} />
-        <Route path="/osmajans" element={<OsmAjans />} />
+        <Route path="/osmreklam" element={<OsmReklam />} />
       </Routes>
     </>
   );

@@ -9,9 +9,9 @@ import tirIcon from "../assets/a.png";
 import kamyonIcon from "../assets/b.png";
 import kamyonetIcon from "../assets/c.png";
 import { FaRedoAlt } from "react-icons/fa";
+import emailjs from "emailjs-com";
 
 const MockupEditor = () => {
-  const [hasUserChanged, setHasUserChanged] = useState(false);
   const [brandaColor, setBrandaColor] = useState("#eeeeee");
   const [firmaIsmi, setFirmaIsmi] = useState("");
   const [fontFamily, setFontFamily] = useState("Anton");
@@ -46,10 +46,10 @@ const MockupEditor = () => {
     kamyon: {
       image: kamyonBase,
       brandaStyle: {
-        width: "62%",
-        height: "59%",
-        top: "11%",
-        left: "31%",
+        width: "73%",
+        height: "62%",
+        top: "9%",
+        left: "30%",
       },
     },
     kamyonet: {
@@ -127,15 +127,6 @@ const MockupEditor = () => {
     text: { x: 50, y: 50 },
     logo: { x: 50, y: 60 },
   });
-
-  useEffect(() => {
-    if (hasUserChanged) {
-      const timeout = setTimeout(() => {
-        setShowAnimation(true);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [hasUserChanged]);
 
   const [previewImage, setPreviewImage] = useState(null);
   const [showPreview, setShowPreview] = useState(false);
@@ -344,6 +335,9 @@ const MockupEditor = () => {
                 }
                 alt={type}
               />
+              <span className="vehicle-label">
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </span>
             </button>
           ))}
         </div>
@@ -357,7 +351,6 @@ const MockupEditor = () => {
               value={firmaIsmi}
               onChange={(e) => {
                 setFirmaIsmi(e.target.value);
-                setHasUserChanged(true);
               }}
             />
             <FaRedoAlt
@@ -433,7 +426,6 @@ const MockupEditor = () => {
                 value={brandaColor}
                 onChange={(e) => {
                   setBrandaColor(e.target.value);
-                  setHasUserChanged(true);
                 }}
               />
             </label>
@@ -454,7 +446,6 @@ const MockupEditor = () => {
                 accept="image/*"
                 onChange={(e) => {
                   handleLogoUpload(e);
-                  setHasUserChanged(true);
                 }}
                 className="hidden-file-input"
               />
@@ -482,13 +473,11 @@ const MockupEditor = () => {
             )}
           </div>
 
-          {hasUserChanged && !isDesignFinished && (
+          {!isDesignFinished && (
             <div className="design-button-wrapper full-width">
               <button
                 onClick={() => setIsDesignFinished(true)}
-                className={`design-finish-button fade-in ${
-                  showAnimation ? "show" : ""
-                }`}
+                className="design-finish-button fade-in show"
               >
                 Tasarımımı Tamamladım
               </button>
@@ -524,10 +513,10 @@ const MockupEditor = () => {
 
                 emailjs
                   .send(
-                    "service_xxxxxx", // EmailJS'den alacağın service ID
-                    "template_xxxxxx", // EmailJS'den alacağın template ID
+                    "service_23ndxyc", // EmailJS'den alacağın service ID
+                    "template_n1p9cdi", // EmailJS'den alacağın template ID
                     contactInfo,
-                    "user_xxxxxxxxxxxx" // EmailJS'den alacağın public key
+                    "Z1ELN-PUKIvj8Rr7P" // EmailJS'den alacağın public key
                   )
                   .then((result) => {
                     alert("Bilgilerin başarıyla gönderildi! 📩");

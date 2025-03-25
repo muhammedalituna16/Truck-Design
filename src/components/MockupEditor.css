@@ -114,7 +114,6 @@
 .refresh-icon:hover {
   color: #fcb215;
 }
-
 .vehicle-selection {
   width: 110px;
   display: flex;
@@ -135,10 +134,13 @@
   overflow: hidden;
   transition: background-color 0.3s ease;
 }
+
 .vehicle-button.selected {
   background-color: #ffe6a0;
   box-shadow: 0 0 0 2px #fcb215;
 }
+
+/* GÃ¶rseli ortala */
 .vehicle-button img {
   width: 40px;
   height: auto;
@@ -149,17 +151,26 @@
   transition: opacity 0.4s ease;
 }
 
+/* Hover sÄ±rasÄ±nda gÃ¶rseli gizle */
+.vehicle-button:hover img {
+  opacity: 0;
+}
+
+/* Etiket stil */
 .vehicle-button span.vehicle-label {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
+  font-size: 16px;
   color: #333;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
+
+/* Hover sÄ±rasÄ±nda etiketi gÃ¶ster */
 .vehicle-button:hover span.vehicle-label {
   opacity: 1;
 }
@@ -178,7 +189,7 @@
   font-family: "Mulish", sans-serif !important;
 }
 
-/* === Firma Girişi === */
+/* === Firma GiriÅŸi === */
 .firma-input-wrapper {
   display: flex;
   flex-direction: row;
@@ -259,6 +270,25 @@
   transition: background 0.3s ease;
 }
 
+.design-finish-button {
+  padding: 15px 28px;
+  background-color: #ffc23e;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.design-finish-button:hover {
+  background-color: #383838;
+  transform: scale(1.04);
+}
+
 .custom-settings label:hover,
 .custom-color-picker label:hover {
   background-color: #d89d10;
@@ -294,10 +324,10 @@ input[type="color"] {
   gap: 16px;
 }
 
-/* === Logo Yükleme === */
+/* === Logo YÃ¼kleme === */
 .logo-upload-wrapper {
   display: flex;
-  flex-direction: row; /* YATAY yerleştir */
+  flex-direction: row; /* YATAY yerleÅŸtir */
   gap: 20px;
   align-items: center;
 }
@@ -528,7 +558,7 @@ input[type="color"] {
   height: 40px;
 }
 
-/* === Tasarım Tamamla Butonu === */
+/* === TasarÄ±m Tamamla Butonu === */
 .design-button-wrapper {
   position: fixed;
   bottom: 40px;
@@ -590,7 +620,7 @@ input[type="color"] {
   }
 }
 
-/* === Ekstra Responsive Düzenlemeler === */
+/* === Ekstra Responsive DÃ¼zenlemeler === */
 @media (max-width: 1450px) {
   .right-controls,
   .firma-input-wrapper,
